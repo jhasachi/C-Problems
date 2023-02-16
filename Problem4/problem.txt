@@ -1,0 +1,71 @@
+Program is given coordinates of three points in a 2D plane. The program reads the coordinates and decides whether these points share a common line, or not. Your task is to develop such a program in C/C++.
+
+The program is given coordinates of three points in the standard input. Each coordinate has the form X Y, where X and Y are decimal numbers.
+
+The program analyzes the position of the points and prints out one of the three possible results:
+
+two or all three input points are identical,
+the input points are distinct and do not share a common line, or
+the input points are distinct and do share a common line. The middle point is printed in this case.
+The exact format of the output is described in sample runs below.
+The program must check whether input data are well-formated, or not. If the input contains ill-formatted data (not integers), the program must detect it, display error message and terminate. The error message is to be displayed on the standard output. The format of the error message is shown in the sample runs below.
+
+Example runs of the program:
+
+Point A:
+1 2
+Point B:
+3 4
+Point C:
+5 6
+There exists a line connecting all three points.
+Point B is in the middle.
+
+Point A:
+0.1 0.2
+Point B:
+0.3 0.4
+Point C:
+0.5 0.6
+There exists a line connecting all three points.
+Point B is in the middle.
+
+Point A:
+10 10
+Point B:
+0 10
+Point C:
+10 0
+No line connects all points.
+
+Point A:
+0 1
+Point B:
+0 3
+Point C:
+0 2
+There exists a line connecting all three points.
+Point C is in the middle.
+
+Point A:
+1 0
+Point B:
+2 0
+Point C:
+-3 0
+There exists a line connecting all three points.
+Point A is in the middle.
+
+Point A:
+1 1
+Point B:
+2 2
+Point C:
+1 1
+Some points are identical.
+
+Point A:
+10 20
+Point B:
+5 xyz
+Invalid input.
