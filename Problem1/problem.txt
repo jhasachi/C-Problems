@@ -16,7 +16,6 @@ Your program will be tested in a restricted environment. The testing environment
 
 Sample program runs:
 
-
 Plane coordinates:
 0,0: KLM
 5,0: Lufthansa
