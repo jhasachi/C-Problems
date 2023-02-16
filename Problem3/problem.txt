@@ -1,0 +1,42 @@
+The task is to create a program that will manage the parking garage.
+
+We assume a parking building that has x floors and y parking spaces on each floor. Cars enter and leave this parking garage. Arrival and departure is controlled by your program. Upon arrival, a parking space is entered (floor, position on the floor and car registration number). The control system decides whether such parking is possible (i.e. whether the specified parking space is available) and, if necessary, occupies it. If the parking space is not available, such a request is rejected.
+
+Analogously, upon departure, the license plate of the departing car is scanned and the corresponding parking space is marked as free. If the license plate number of the departing car is not found in the list of parked cars, the program will alert you.
+
+The program first receives the dimensions of the parking lot upon entry. This is a pair of integers - the number of floors followed by the number of parking spaces on one floor. This entry is followed by a list of car arrivals and departures. The arrival has the form + floor position RZ, where floor and position are integers in the range 0 to the number of floors - 1, respectively. number of parking spaces - 1 and RZ is any sequence of characters indicating the registration number (the registration number can be a maximum of 10 characters long and does not contain white characters). The departure of the car is entered as - RZ, where the RZ is the registration number of the departing car, the same restrictions apply to it as in the case of entering the RZ on arrival.
+
+The output of the program is a response to the processing of individual arrivals and departures. If the arrival / departure is processed correctly, the program will only display the message OK. If an occupied space is entered upon arrival, or the registration number of a car is entered upon departure, which is not currently parked in the parking garage, the program evaluates this as an unfulfillable request and displays a corresponding message. It then continues processing other input requirements.
+
+If the input is invalid, the program must detect this, display an error message, and exit. Display the error message on the standard output (not on the error output). Consider it an error:
+
+the size of the parking garage is not entered as a pair of positive whole numbers,
+an instruction other than arrival or departure is entered (i.e. the request does not start with either + or -),
+upon arrival, some information is missing (floor, position, serial number) or the floor/position is outside the range of the parking garage,
+the registration number is not entered at departure.
+
+Example:
+
+Size : 
+10  20 
+Requirements : 
++  0  0 987ABC21
+OK
++  5  7 ABC1234
+OK
++  9  11 XYZ987A
+OK
++  5  8 129X98X
+OK
+- ABCDEF
+Not found
+- XYZ987A
+OK
+- XYZ987A
+Not found
++  9  11 BACKSTAGE
+OK
++  9  11 KLMN32112
+Occupied by OPRSTUV
++  10  3 AAAA666
+Invalid input.
