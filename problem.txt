@@ -1,0 +1,82 @@
+The problem is to develop a program to analyze input sequence.
+
+Assume a sequence of numbers. We may choose a contiguous range from the input sequence, for instance, we may choose the range between the 5-th number and the 10-th number. A range must contain at least two numbers. The sum of the numbers may be compute for such range. We choose all possible ranges from the input sequence and we compute the sum for each of them. We are interested how many different ranges exist in the input sequence such that these ranges have the same sum.
+
+For instance, the input sequence may be:
+1 5 2 4 2 2 2
+
+there is a total of 21 contiguous ranges of length ≥ 2, in particular:
+
+0..1:  1 5               sum=6
+0..2:  1 5 2             sum=8
+0..3:  1 5 2 4           sum=12
+0..4:  1 5 2 4 2         sum=14
+0..5:  1 5 2 4 2 2       sum=16
+0..6:  1 5 2 4 2 2 2     sum=18
+1..2:  5 2               sum=7
+1..3:  5 2 4             sum=11
+1..4:  5 2 4 2           sum=13
+1..5:  5 2 4 2 2         sum=15
+1..6:  5 2 4 2 2 2       sum=17
+2..3:  2 4               sum=6
+2..4:  2 4 2             sum=8
+2..5:  2 4 2 2           sum=10
+2..6:  2 4 2 2 2         sum=12
+3..4:  4 2               sum=6
+3..5:  4 2 2             sum=8
+3..6:  4 2 2 2           sum=10
+4..5:  2 2               sum=4
+4..6:  2 2 2             sum=6
+5..6:  2 2               sum=4
+
+Of these 21 ranges, there are 12 pairs such that the ranges in the pair have the same sum:
+
+0..1 ~ 2..3             sum=6  
+0..1 ~ 3..4             sum=6  
+0..1 ~ 4..6             sum=6  
+0..2 ~ 2..4             sum=8  
+0..2 ~ 3..5             sum=8  
+0..3 ~ 2..6             sum=12 
+2..3 ~ 3..4             sum=6  
+2..3 ~ 4..6             sum=6  
+2..4 ~ 3..5             sum=8  
+2..5 ~ 3..6             sum=10 
+3..4 ~ 4..6             sum=6  
+4..5 ~ 5..6             sum=4  
+
+The input of the program is a sequence of integers (positive, zero, and negative values). The reading of the input sequence is terminated when EOF is reached. The input sequence is at most 2000 numbers long.
+
+The output of the program is the total number of pairs of ranges such that the sums of the ranges are the same.
+
+The program must detect invalid input. The following is considered an error:
+
+the input sequence is empty (does not contain any number),
+the input sequence is too long (over 2000 numbers),
+the input is not a valid integer.
+This problem is evaluated in a "bonus" mode. There will be some points deduced for a slow implementation (naive slow algorithm). On the other hand, a fast implementation may be awarded some extra points in the bonus test.
+
+Example program output:
+
+Input sequence:
+1 5 2 4
+Total pairs: 1
+Input sequence:
+1 5 2 4 2 2 2
+Total pairs: 12
+
+Input sequence:
+1 5 6
+20 -20
+Total pairs: 3
+
+Input sequence:
+2 2 1 7 7
+Total pairs: 0
+
+Input sequence:
+1 1 2 3 5 8
+Total pairs: 0
+
+Input sequence:
+abcd
+Invalid input.
